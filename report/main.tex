@@ -422,17 +422,38 @@ The \SI{343}{Hz}, \SI{425}{Hz}, \SI{510}{Hz} and \SI{680}{Hz} maps match the fit
 
 The apparatus is not a perfect open-closed or closed-closed tube. The loudspeaker end is not a mathematically open end. It is a driven, coupled boundary. The blocked end includes a board and a probe-access path, so it is not a lossless rigid termination. The microphone itself slightly perturbs the tube. Leakage, bead friction and nonuniform coupling can also shift the measured envelope. For this reason, the report uses both ideal reference families as interpretive guides instead of forcing all frequencies into one exact boundary model.
 
-\section{Limitations and Uncertainty}
+\section{Error Analysis and Uncertainty}
 
-\begin{itemize}
-  \item The KY-037 output is a relative voltage indicator, not calibrated SPL and not absolute pressure.
-  \item Different drive volumes were used for practical measurement, so cross-frequency amplitude comparison must use normalized shapes rather than raw amplitude.
-  \item The accessible scan range in the cleaned analysis was \SIrange{1}{43}{cm}, not the full \SI{50}{cm} physical tube length.
-  \item The \SI{255}{Hz} row includes three linearly interpolated positions: \SI{35}{cm}, \SI{36}{cm} and \SI{42}{cm}.
-  \item Beads provide qualitative visual evidence only; they are affected by particle motion, accumulation, friction, static charge and lighting.
-  \item The fixed-position sweep was limited to its sampled frequency set; \SI{425}{Hz} and \SI{680}{Hz} are not directly represented as exact rows in the sweep summary used here.
-  \item More repeated full position scans would allow stronger uncertainty estimates and repeatability analysis.
-\end{itemize}
+The uncertainty in this experiment has two parts. The first part is the random scatter of the microphone voltage during each capture window. This was estimated using the standard deviation of the recorded RMS amplitudes at each frequency-position point. For a normalized mode-shape point,
+\begin{equation}
+  \delta \anorm(x,f)\approx \frac{\sigma_{\rms}(x,f)}{\max_x \rms(x,f)}.
+\end{equation}
+This estimate gives a point-by-point uncertainty after row-wise normalization. It does not include all uncertainty from the position of the maximum point used for normalization, so it should be read as a practical scatter estimate rather than a full statistical confidence interval.
+
+The scatter was small for most measured points. Across the six frequency-position maps, the median relative scatter \(\sigma_{\rms}/\rms\) was about \(0.13\%\). The 90th percentile was about \(0.82\%\), and the 95th percentile was about \(1.71\%\). A few points had much larger relative scatter because their median amplitudes were very small. These points affect local minima more strongly than high-amplitude regions.
+
+\begin{table}[H]
+  \centering
+  \caption{Pointwise uncertainty indicators for the six frequency-position maps.}
+  \begin{tabular}{rrrrr}
+    \toprule
+    Frequency & Points & Median \(\sigma/\rms\) & Max. normalized \(\sigma\) & Clipped samples \\
+    \midrule
+    170 & 43 & 0.0020 & 0.0112 & 1 \\
+    255 & 43 & 0.0057 & 0.0839 & 10 \\
+    343 & 43 & 0.0011 & 0.0010 & 0 \\
+    425 & 43 & 0.0012 & 0.0028 & 0 \\
+    510 & 43 & 0.0012 & 0.1138 & 0 \\
+    680 & 43 & 0.0012 & 0.0054 & 0 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+The \SI{255}{Hz} map had the largest data-quality limitation. It included three interpolated positions, \SI{35}{cm}, \SI{36}{cm} and \SI{42}{cm}, and it also had the largest number of clipped samples. Therefore, small details in the \SI{255}{Hz} curve should not be over-interpreted. The \SI{510}{Hz} map had one point with a large relative scatter near a low-amplitude region, so the exact depth of that local minimum is less certain than the position of the broader high- and low-amplitude regions.
+
+The fixed-position sweep had smaller pointwise scatter. Its median relative scatter was about \(0.34\%\), with a maximum of about \(2.41\%\). However, this does not mean that the sweep is a more reliable mode-shape test. The sweep uncertainty is dominated by systematic effects because it was measured at only one microphone position. It mixes speaker response, amplifier response, microphone response, tube response and local pressure amplitude.
+
+The second part of the uncertainty is systematic. The KY-037 output is a relative voltage indicator, not calibrated SPL and not absolute pressure. Different drive volumes were used for practical measurement, so cross-frequency amplitude comparison must use normalized shapes rather than raw amplitude. The accessible scan range was \SIrange{1}{43}{cm}, not the full \SI{50}{cm} physical tube length. The microphone probe could also perturb the field slightly. Beads provide qualitative visual evidence only, because they are affected by particle motion, accumulation, friction, static charge and lighting. More repeated full position scans would allow a stronger repeatability analysis.
 
 \section{Conclusion}
 
@@ -443,11 +464,6 @@ The experiment supports the formation of standing-wave-like acoustic pressure pa
 
 The data files, figure files, and calculation scripts used for this report are available in the GitHub repository:
 \url{https://github.com/gary1110086/standing-wave-mode-mapping-data}.
-
-The exact data package version used for this report is commit:
-\begin{center}
-{\scriptsize\texttt{83644df9b9cdf20baae3d6afbe5d49d3562cde01}}
-\end{center}
 
 \begin{itemize}
   \item Primary mode-shape data: \path{data/mode_shape/mode_shape_6freq_normalized_summary.csv}.
