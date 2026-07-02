@@ -187,20 +187,20 @@ The tube length was \SI{50}{cm}. The right end was blocked by a board with probe
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.96\linewidth]{setup_annotated.jpg}
-  \caption{Annotated full experimental setup. The loudspeaker on the left drives the acrylic tube. The blocked end board, movable KY-037 microphone probe, beads, and laptop/Python logger form the measurement side of the apparatus.}
-  \label{fig:annotated-full-setup}
+  \includegraphics[width=0.96\linewidth]{setup_overview.jpg}
+  \caption{Full experimental setup. The loudspeaker on the left drives the acrylic tube. The blocked end board, movable KY-037 microphone probe, beads, and laptop/Python logger form the measurement side of the apparatus.}
+  \label{fig:full-setup}
 \end{figure}
 
 \begin{figure}[H]
   \centering
   \begin{subfigure}{0.47\linewidth}
-    \includegraphics[width=\linewidth]{subwoofer_annotated.jpg}
+    \includegraphics[width=\linewidth]{subwoofer_driver.jpg}
     \caption{Loudspeaker driver used to excite acoustic waves in the tube.}
   \end{subfigure}
   \hfill
   \begin{subfigure}{0.47\linewidth}
-    \includegraphics[width=\linewidth]{amplifier_annotated.jpg}
+    \includegraphics[width=\linewidth]{amplifier_board.jpg}
     \caption{Audio amplifier board used between the tone source and the loudspeaker.}
   \end{subfigure}
   \caption{Drive-chain components. The loudspeaker converts the amplified electrical signal into acoustic excitation. The amplifier board provides the adjustable drive signal for the speaker.}
@@ -273,7 +273,7 @@ The fixed-position sweep did not produce a clean textbook resonance spectrum. Th
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.92\linewidth]{frequency_response_x37p5_annotated.png}
+  \includegraphics[width=0.92\linewidth]{frequency_response_x37p5.png}
   \caption{Fixed-position frequency response at \(x=\SI{37.5}{cm}\). This plot is a diagnostic response curve, not a full mode-shape measurement.}
 \end{figure}
 
@@ -441,18 +441,18 @@ The experiment supports the formation of standing-wave-like acoustic pressure pa
 \appendix
 \section{Data and Processing Sources}
 
-The data files, figure files, and processing scripts used for this report are archived in the GitHub repository:
-\url{https://github.com/Yuan1z0825/standing-wave-mode-mapping-data}.
+The data files, figure files, and calculation scripts used for this report are available in the GitHub repository:
+\url{https://github.com/gary1110086/standing-wave-mode-mapping-data}.
 
-The exact data archive version used for this report is commit \texttt{923c7f5b6d627e8ff08627e519587c00f4057b08}.
+The exact repository version used for this report is commit \texttt{923c7f5b6d627e8ff08627e519587c00f4057b08}.
 
 \begin{itemize}
-  \item Primary mode-shape data: \path{data/mode_shape/mode_shape_6freq_filled_normalized_summary.csv}.
-  \item Row-normalized heatmap table: \path{data/mode_shape/mode_shape_6freq_filled_heatmap_row_normalized_table.csv}.
+  \item Primary mode-shape data: \path{data/mode_shape/mode_shape_6freq_normalized_summary.csv}.
+  \item Row-normalized heatmap table: \path{data/mode_shape/mode_shape_6freq_row_normalized_heatmap_table.csv}.
   \item Fit parameter source: \path{data/mode_shape/ideal_reference_fit_parameters.csv}.
   \item Fixed-position sweep source: \path{data/frequency_sweep/frequency_response_summary.csv}.
   \item Report figures: \path{figures/} and \path{report/figures/}.
-  \item Historical folder names containing \texttt{max4466} are retained only as path labels. Current reporting language uses KY-037 or microphone sound detection sensor.
+  \item Sensor description in this report uses KY-037 or microphone sound detection sensor.
 \end{itemize}
 
 \end{document}
