@@ -175,8 +175,9 @@ def make_one(freq: int, meta: dict[str, object]) -> None:
 
     draw = ImageDraw.Draw(canvas)
     draw_wave_strip(draw, str(meta["mode"]), str(meta["title"]), str(meta["kind"]))
-    canvas.convert("RGB").save(FIG_DIR / str(meta["out"]), quality=95)
-    print(FIG_DIR / str(meta["out"]))
+    out_path = FIG_DIR / str(meta["out"])
+    canvas.convert("RGB").save(out_path, quality=95)
+    print(out_path.relative_to(REPO_ROOT).as_posix())
 
 
 def main() -> None:

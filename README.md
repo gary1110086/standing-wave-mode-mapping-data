@@ -23,6 +23,9 @@ The report uses the sensor name **KY-037** or **microphone sound detection senso
 - `data/mode_shape/ideal_reference_fit_parameters.csv`  
   Parameters used for the ideal reference envelope guides.
 
+- `data/mode_shape/raw/`  
+  Raw microphone capture CSV files that were still available from the local project source and referenced by the cleaned summary table. The cleaned summary CSV is the primary data source used by the report.
+
 - `data/frequency_sweep/frequency_response_summary.csv`  
   Fixed-position frequency sweep data near x = 37.5 cm.
 

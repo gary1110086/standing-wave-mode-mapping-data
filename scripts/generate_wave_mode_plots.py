@@ -194,7 +194,7 @@ def make_plot(freq_hz: int, summary: pd.DataFrame, params: pd.DataFrame, project
     out_path = out_dir / f"mode_shape_{freq_hz}Hz_wave.png"
     fig.savefig(out_path, bbox_inches="tight")
     plt.close(fig)
-    print(out_path)
+    print(out_path.relative_to(project_root).as_posix())
 
 
 def main() -> None:

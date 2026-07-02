@@ -441,12 +441,18 @@ The experiment supports the formation of standing-wave-like acoustic pressure pa
 \appendix
 \section{Data and Processing Sources}
 
+The data files, figure files, and processing scripts used for this report are archived in the GitHub repository:
+\url{https://github.com/Yuan1z0825/standing-wave-mode-mapping-data}.
+
+The exact data archive version used for this report is commit \texttt{923c7f5b6d627e8ff08627e519587c00f4057b08}.
+
 \begin{itemize}
-  \item Primary data source: \path{mvp_temperature_logger/max4466_pressure_map_logger_complete_data/mode_shape/analysis_6freq_filled_ideal/mode_shape_6freq_filled_normalized_summary.csv}.
-  \item Fit parameter source: \path{ideal_reference_fit_parameters.csv} in the same folder.
-  \item Fixed-position sweep source: \path{mvp_temperature_logger/max4466_pressure_map_logger/data/pressure_sweep/frequency_response_summary.csv}.
-  \item Figure source for this portable LaTeX folder: \path{figures/}.
-  \item Historical folder names containing \texttt{max4466} are retained as path labels only. Current reporting language uses KY-037 or microphone sound detection sensor.
+  \item Primary mode-shape data: \path{data/mode_shape/mode_shape_6freq_filled_normalized_summary.csv}.
+  \item Row-normalized heatmap table: \path{data/mode_shape/mode_shape_6freq_filled_heatmap_row_normalized_table.csv}.
+  \item Fit parameter source: \path{data/mode_shape/ideal_reference_fit_parameters.csv}.
+  \item Fixed-position sweep source: \path{data/frequency_sweep/frequency_response_summary.csv}.
+  \item Report figures: \path{figures/} and \path{report/figures/}.
+  \item Historical folder names containing \texttt{max4466} are retained only as path labels. Current reporting language uses KY-037 or microphone sound detection sensor.
 \end{itemize}
 
 \end{document}
